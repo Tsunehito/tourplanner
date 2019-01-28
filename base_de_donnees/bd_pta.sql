@@ -1,4 +1,4 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+idSaisonSET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
@@ -57,9 +57,9 @@ CREATE  TABLE IF NOT EXISTS `pta`.`Prestations` (
   `tarif_employe` FLOAT NOT NULL ,
   `note` VARCHAR(500) NULL ,
   PRIMARY KEY (`idPrestation`) ,
-  INDEX `fk_Prestations_Saisons1` (`idSaisons` ASC) ,
+  INDEX `fk_Prestations_Saisons1` (`idSaison` ASC) ,
   CONSTRAINT `fk_Prestations_Saisons1`
-    FOREIGN KEY (`idSaisons` )
+    FOREIGN KEY (`idSaison` )
     REFERENCES `pta`.`Saisons` (`idSaison` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -135,7 +135,7 @@ DROP TABLE IF EXISTS `pta`.`Clients` ;
 CREATE  TABLE IF NOT EXISTS `pta`.`Clients` (
   `idClient` INT NOT NULL AUTO_INCREMENT ,
   `nom_societe` VARCHAR(100) NOT NULL ,
-  `adresse ` VARCHAR(100) NULL ,
+  `adresse` VARCHAR(100) NULL ,
   `code_postal` INT NULL ,
   `ville` VARCHAR(30) NULL ,
   `pays` VARCHAR(30) NULL ,
