@@ -1,2 +1,3 @@
 # tourplanner
-PTA tourplanner project
+
+PTA tourplanner project (during my internship at Baobab Ingénierie)
